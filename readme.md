@@ -47,4 +47,3 @@
 - Dependencies
     - Tryangle by Balon and Richman
     - FASLR by Dan
-    - 
