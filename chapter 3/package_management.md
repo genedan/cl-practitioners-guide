@@ -83,10 +83,17 @@ a large model embedded in a spreadsheet. The actuary decides to call this first 
 
 ## Hosting
 
-### Repository Hosting Providers
+Code repositories need to be stored in a location accessible by contributors, as well as any downstream projects and
+applications that depend on them. We recommend storing them with a hosting provider, which is a service that combines
+code storage with project management features such as issue-tracking, automated testing, and CI/CD. Repository hosting
+is provided by many companies, and some examples of platforms include GitHub, Azure DevOps, Bitbucket, and GitLab.
+Depending on the provider, the storage location may be on the cloud or on a local server if the actuarial employer
+wishes to store their data on premises.
+
+
 
 ## Workflow
 
-**Insert Diagram Here** Diagram between local contributors, data, hosting provider, downstream systems/applications
+![git_workflow](../git_workflow.png)
 
 # Extensibility
