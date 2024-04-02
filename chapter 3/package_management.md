@@ -81,6 +81,9 @@ shortcomings and lack features that version control systems used in software hav
 One such shortcoming arises when the progression of complex actuarial projects is not monolithically linear. Imagine 
 a large model embedded in a spreadsheet. The actuary decides to call this first version "v1." Later on, 
 
+
+## Environments
+
 ## Hosting
 
 Code repositories need to be stored in a location accessible by contributors, as well as any downstream projects and
@@ -95,5 +98,59 @@ wishes to store their data on premises.
 ## Workflow
 
 ![git_workflow](../git_workflow.png)
+
+The above figure depicts an example workflow on how an organization may choose to maintain a reserving package or
+application that it has version controlled as a git repository. This workflow is divided into four main environments 
+described as follows:
+
+- **Hosting Environment:** A server with an installation of a version control hosting provider (in this case, GitHub)
+- **Development Environment:** The collection of employees and their machines who are responsible for contributing to the
+repository
+- **Production Environment:** A server running the deployed application that users interact with
+- **Testing Environment:** A server that aims to closely replicate the production environment, used to test the application
+before deployment
+
+These environments each have their own copy (or copies, in the case of the development environment) so that they can
+serve their purpose without interference from changes occurring in the other environments. For example, one would not 
+want to make experimental code changes to the production server because that may lead to users experiencing bugs during
+important tasks. Furthermore, one would not want the contributors to query data directly from the production
+environment, even when they have read-only access because doing so may place unwanted load on the production server's
+database which may slow down or even halt the tasks being carried out by the users.
+
+Next, we take a deeper look into each environment. 
+
+### Hosting Environment
+
+The hosting environment serves as the communicative link between the contributors, the testing environment, and the 
+production environment. It stores the official version of the code repository, and by official we mean that this is 
+the version that gets copied when new contributors are added to the development team, and when the production and 
+testing environment need to fetch updated versions of the project's code.
+
+The hosting environment is typically accessed via a web browser, although modern IDEs
+(Integrated Development Environments) also support integration with commonly used hosting providers. Contributors
+access a portal which typically offers project management features such as raising and assigning tickets to fix bugs 
+or add new features, kanban boards, and discussion forums. Hosting providers also have features that make it easy to
+look at past versions of code and to view which contributor was responsible for writing which lines.
+
+
+### Development Environment
+
+The development environment is the machine or collection of machines that the contributor(s) uses to make code changes
+to the project. Each development machine contains its own local copy of the code. Contributors do not share code with each 
+other directly, that is, from one development machine to another. Rather, they upload code changes to the hosting
+environment in a process called "pushing." Team members then receive these changes from the hosting
+provider to their own machines in a process called "pulling." While this style of workflow is intended to minimize 
+conflicting copies of code, such conflicts can still happen, such as when two contributors work on the same file at the
+same time. In this scenario, the hosting provider's issue tracking and project management features can be used to
+coordinate the efforts of the team.
+
+## Production Environment
+
+The production environment is the server that contains the live application that users interact with. 
+For example, in the context of a web-based reserving application, the users will access and interact with the 
+application via their browser. Data resulting from such interactions are then stored on the production environment's
+database.
+
+
 
 # Extensibility
