@@ -21,8 +21,8 @@ Nothing beats Excel for actuarial communication
 
 ## Downstream Projects
 
-### Tryangle by Balona and Richman (Kenneth)
-Todo
+### Tryangle by Balona and Richman
+Tryangle is an automatic chainladder reserving framework. It provides scoring and optimisation methods based on machine learning techniques to automatically select optimal parameters to minimise reserve prediction error. Key features include optimising loss development factors, choosing between multiple IBNR models, or optimially blending these models.
 
 ### FASLR: Free Actuarial System for Loss Reserving by Dan
 
