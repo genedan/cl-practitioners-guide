@@ -1,1 +1,4 @@
-jupyter
+chainladder==0.8.19
+jupyter==1.0.0
+nbsphinx==0.9.3
+Sphinx==7.2.6
