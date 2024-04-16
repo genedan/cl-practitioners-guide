@@ -3,5 +3,5 @@ Chapter 3
 
 .. toctree::
 
-   package_management
-   chainladder_ecosystem
+   package_management.rst
+   chainladder_ecosystem.rst

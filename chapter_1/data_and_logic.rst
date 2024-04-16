@@ -2,7 +2,7 @@ Data And Logic
 ==============
 
 ===========================================
-Should Data and Business Logic be separate?
+Should Data and Business Logic be Separate?
 ===========================================
 
 The actuarial profession is used to working with spreadsheets. The CAS technology survey consistently shows Microsoft Excel as the dominant tool used in actuarial work. Indeed for a large swath of actuarial problems, spreadsheets are fantastic tool.  According to the ASTIN 2016 Non-Life Reserving Practices Survey, the plurality of practitioners worldwide use spreadsheet software for meeting reserving obligations.

@@ -3,5 +3,5 @@ Chapter 1
 
 .. toctree::
 
-   data_and_logic
+   data_and_logic.rst
 
