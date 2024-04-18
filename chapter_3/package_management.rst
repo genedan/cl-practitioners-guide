@@ -11,7 +11,7 @@ when doing so and the motivations towards organizing their code into higher leve
 functions, classes, and packages - designed to solve such problems.
 
 We will then dive into how packages can be managed within and across teams and give examples of practices that can be
-adopted to ease
+adopted to ease the guesswork involved in coordinating such efforts.
 
 Hierarchy of Abstraction
 ------------------------
