@@ -4,7 +4,7 @@ Package Management
 Reserve studies apply algorithms to manipulate data. These algorithms can be written as Excel formulas,
 as a sequence of statements in a script, a collection of functions and classes in a package, or in a variety
 of other ways. The aim of this section is to promote the organization of these algorithms into packages,
-of which both the R and Python versions of Chainladder are examples. We will start by following what an actuary
+of which both the R and Python versions of Chainladder are examples of. We will start by following what an actuary
 interested in applying programming on the job might do as they begin to learn their language of preference,
 by applying simple Python statements to an input triangle. We will then describe the problems the actuary may face
 when doing so and the motivations towards organizing their code into higher levels of abstraction - that is,
@@ -38,8 +38,7 @@ Algorithms Encapsulated as Functions
 One way to avoid these issues is to parameterize the script into a function to abstract away its inner workings. This
 prevents the need to copy every line of code each time it's run when only one aspect - the input filename, changes.
 
-If a script is long, it may need to be broken down into several functions. A simple rule of them is a line of code
-is repeated while writing a project, it should be transformed into a function.
+If a script is long, it may need to be broken down into several sub-functions, or sub-routines. A simple rule of thumb is that if a few lines of code is repeated within a project, it should be transformed into a function. Functions should then be called, and the differences in those reruns passed in as arguments or parameters.
 
 Algorithms Organized into Classes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,7 +47,7 @@ Data and the functions that transform it are logically related. For example, whe
 one may wish to produce link ratios. The input triangle and link ratios are often thought of together during the
 phase of data analysis.
 
-Rather than have references to data and its transforming functions scattered throughout a file, the practitioner
+Rather than having references to data and its transforming functions scattered throughout a file, the practitioner
 may wish to group them together in a single object to make it easy to mentally reason about it. This is where the
 concept of classes comes into play - it is an abstract representation of data and its associated functions, grouped
 together.
@@ -66,30 +65,32 @@ Sharing Code Between Team Members
 
 As a project increases in scope and visibility, there will be a time when the maintainer will need to share code with others or invite others to work on it.
 
-Reasons for sharing code
+Reasons for Sharing Code
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Promote visibility within or beyond their organization
 * Need to grant access to other departments, such as IT to assist in deployment and maintenance
 * The project scope has grown so that more people need to be core contributors, such as new direct reports in an expanding team
 * The project has become useful and other people want to use it
+* A portion of the project's "routine" can be re-used in a different project
 
 Non-recommended Methods for Sharing Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following methods for sharing code are not recommended but may have been used in the past prior to the rise of repository hosting providers. Because these methods are not optimal and come with many downsides, but can still be used to share code, it may be difficult to convince IT or upper management to provide proper tools or adopt industry best practices (source control hosted on a repository provider), since you may be told that as long these get the job done, you will need to put up with whatever inconveniences they may carry. Our goal is to clearly articulate these downsides in the hopes that you can overcome the communicative barrier at work.
+The following methods for sharing code are not recommended but may have been used in the past prior to the rise of repository hosting providers. Because these methods are not optimal and come with many downsides, but can still be used to share code, it may be difficult to convince IT or upper management to provide proper tools or adopt industry best practices (source control hosted on a repository provider). Since one may be told that as long as the jobs get done, we will often put up with whatever inconveniences they may carry. Our goal is to clearly articulate these downsides in the hopes that a practitioner can overcome the communicative barrier at work.
 
 Email
 ^^^^^
 
-Why you shouldn't share code this way:
+Why we shouldn't share code this way:
 
 * Companies may forbid attachments with certain code extensions (.py, .R).
-* If you shared your code and latter make an update, you will need to send a new file. If your colleague also made their own update, they will need to manually inspect your new version and their version and hope that they didn't make any errors in doing so.
+* If you shared your code and later make an update, you will need to send a new file. If your colleague also made their own update, they will need to manually inspect your new version and their version and hope that they didn't make any errors in doing so.
+* Emails are reactive, if you don't check your email, you might not know a new version is available. 
 
 Communicative barriers:
 
-If you bring these points up to upper management, you may receive the counterargument since there are often workarounds
+If you bring these points up to upper management, you may receive the counterargument since there are often workarounds.
 
 Shared Folders
 ^^^^^^^^^^^^^^
@@ -98,7 +99,7 @@ Perhaps you've gotten your department to adopt version control and have also bee
 
 Why you shouldn't share code this way:
 
-* Poor integration with project management software: As a project grows in size, you will want start using tools to manage the project. This includes things like issue tracking, CI/CD, and automated testing. There are well-known commercial products such as GitHub, Azure DevOps, and Atlassian which provide such features out-of-the box, in addition to hosting code repositories on either an on-premises server or in the cloud.
+* Poor integration with project management software: As a project grows in size, you will want start using tools to manage the project. This includes things like issue tracking, continuous integration and continuous deployment (CI/CD), and automated testing. There are well-known commercial products such as GitHub, Azure DevOps, and Atlassian which provide such features out-of-the box, in addition to hosting code repositories on either an on-premises server or in the cloud.
 * Merge conflicts: Leaving an editable set of code on a shared drives opens the possibility of having uncommitted edits if people choose to edit the shared drive version of the code rather than locally and then pushing their code to a centralized hosting provider. This type of workflow will lead to conflicting versions of code across team members, which will be extremely difficult to reconcile if the project is large.
 
 
@@ -106,15 +107,15 @@ Physical Media
 ^^^^^^^^^^^^^^
 
 At this time of writing, we would find this situation to be rare, but you never know what you might find at companies,
-even today.  It is common for companies to lock down the ability of their employees to put data onto physical media
+even today. It is common for companies to lock down the ability of their employees to put data onto physical media
 for security reasons, such as protecting data and intellectual property. For this reason alone, attempting to share
-code this way is not recommended. Another reason would be the inconvenience of physical media compared to
+code this way is not recommended, nor practical. Another reason would be the inconvenience of physical media compared to
 Intra-/Internet transfer capabilities that we would hope would exist at most companies.
 
-Using a version control system
+Using a Version Control System
 ------------------------------
 
-It doesn't take long for practitioner who is interested in code to independently arrive at the conclusion that some
+It doesn't take long for a practitioner who is interested in code to independently arrive at the conclusion that some
 form of version management is needed. Even with the absence of code, practitioners who work primarily with spreadsheets
 will recognize the importance of preserving prior versions of their work so that they may be revisited later. For
 example, if one were to update a spreadsheet model, it may still be necessary to preserve a version of the model prior
@@ -144,24 +145,22 @@ Depending on the provider, the storage location may be on the cloud or on a loca
 wishes to store their data on premises.
 
 
-
 Workflow
 --------
 
 .. image:: ../git_workflow.png
 
 The above figure depicts an example workflow on how an organization may choose to maintain a reserving package or
-application that it has version controlled as a git repository. This workflow is divided into four main environments
+application that is version controlled as a git repository. This workflow is divided into four main environments
 described as follows:
 
-* **Hosting Environment:** A server with an installation of a version control hosting provider (in this case, GitHub)
-* **Development Environment:** The collection of employees and their machines who are responsible for contributing to the
-repository
-* **Production Environment:** A server running the deployed application that users interact with
+* **Hosting Environment:** A server with an installation of a version control hosting provider (in this case, GitHub).
+* **Development Environment:** The collection of employees or team members and their machines who are responsible for contributing to the repository.
+* **Production Environment:** A server running the deployed application that users interact with.
 * **Testing Environment:** A server that aims to closely replicate the production environment, used to test the application
-before deployment
+before deployment.
 
-These environments each have their own copy (or copies, in the case of the development environment) so that they can
+These environments each have their own copy (or copies) so that they can
 serve their purpose without interference from changes occurring in the other environments. For example, one would not
 want to make experimental code changes to the production server because that may lead to users experiencing bugs during
 important tasks. Furthermore, one would not want the contributors to query data directly from the production
@@ -178,10 +177,9 @@ production environment. It stores the official version of the code repository, a
 the version that gets copied when new contributors are added to the development team, and when the production and
 testing environment need to fetch updated versions of the project's code.
 
-The hosting environment is typically accessed via a web browser, although modern IDEs
-(Integrated Development Environments) also support integration with commonly used hosting providers. Contributors
+The hosting environment is typically accessed via a web browser, although modern Integrated Development Environments (IDEs) also support integration with commonly used hosting providers. Contributors
 access a portal which typically offers project management features such as raising and assigning tickets to fix bugs
-or add new features, kanban boards, and discussion forums. Hosting providers also have features that make it easy to
+or add new features, Kanban boards, and discussion forums. Hosting providers also have features that make it easy to
 look at past versions of code and to view which contributor was responsible for writing which lines.
 
 Development Environment
@@ -191,10 +189,9 @@ The development environment is the machine or collection of machines that the co
 to the project. Each development machine contains its own local copy of the code. Contributors do not share code with each
 other directly, that is, from one development machine to another. Rather, they upload code changes to the hosting
 environment in a process called "pushing." Team members then receive these changes from the hosting
-provider to their own machines in a process called "pulling." While this style of workflow is intended to minimize
-conflicting copies of code, such conflicts can still happen, such as when two contributors work on the same file at the
-same time. In this scenario, the hosting provider's issue tracking and project management features can be used to
-coordinate the efforts of the team.
+provider to their own machines in a process by "pulling." While this style of workflow is intended to minimize
+conflicting copies of code, such conflicts can still happen, such as when two contributors work on the same area of the same file. In this scenario, the hosting provider's issue tracking and project management features can be used to
+coordinate the efforts of the team. This way, the contributors can figure out which version of the code or file to accept or reject.
 
 Production Environment
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -227,7 +224,7 @@ and containerization might be regarded as contributing to a steep learning curve
 actuary whose primary responsibility is to analyze financial data and provide strategic guidance to company leadership.
 
 The authors recognize that when figures are due the next quarter, it may not be practical for the one person responsible
-for them to read a 250-page book on containerization or to hire someone who knows the subject to help out before
+for financial close to read a 250-page book on containerization or to hire someone who knows the subject to help out before
 the next deadline hits. These practices represent an ideal that may be subject to the practical constraint of time
 and resources of an organization - an ideal towards which a company strives to reach over time but continually moves
 due to the ever-changing business environment and even changes in the practices themselves.
@@ -247,7 +244,7 @@ the technologies that are used. Certain practices may become mandatory in the fu
 example, newer operating systems such as Ubuntu 23.10 require the creation of virtual environments (discussed below)
 prior to the installation of Python packages.
 
-Virtual Environments and their Cousins
+Virtual Environments and Their Cousins
 """"""""""""""""""""""""""""""""""""""
 
 Python has a concept called a virtual environment, which is a folder that contains an installation of Python as well
@@ -256,10 +253,9 @@ which is the version Python that gets installed when the user first installs Pyt
 of using the base installation, the project uses the virtual environment instead. Different projects may have their
 own virtual environments separate from those of other projects, which allows different projects to run different
 versions of Python and Python packages without coming into conflict with each other. A project may even have multiple
-virtual environments so that the practitioner can test the project under different sets of dependencies (such as
-testing out different versions of Pandas on the same project).
+virtual environments so that the practitioner can test the project under different sets of dependencies (for example, when checking for compatibility of the updated dependent package).
 
-Some Python practitioners may prefer to use an analogous environment called a Conda environment which works similarly
+Some Python practitioners may prefer to use an analogous environment called a Conda environment, which works similarly
 but is associated with the Anaconda distribution of Python, which is common amongst data analytics professionals.
 
 R has various package management systems, notably Packrat and renv.
@@ -281,13 +277,13 @@ Cross-Team Sharing
 
 Once a package is ready to be shared with other people and teams, beyond those involved in writing the package,
 the practitioner needs a way to share it. This section will list some methods to help practitioners who are tempted
-to use the non-recommended methods, such as email and shared folders.
+to use the non-recommended methods, such as emails or shared folders.
 
 PyPI/CRAN Mirroring
 """""""""""""""""""
 
 Organizations may prohibit uploading Python or R packages to public repositories such as PyPI or CRAN. This is because
-they do not want their IP to be exposed, as the packages uploaded to these repositories are visible to the public. These
+they do not want their private IP to be exposed, as the packages uploaded to these repositories are visible to the public. These
 public repositories are oftentimes the initial location that practitioners gravitate towards when first learning to
 installing packages because many books and open-source documentations use commands that set PyPI or CRAN as the
 default location where packages are downloaded from prior to installation. Practitioners who are not familiar with
@@ -302,7 +298,7 @@ Installing from the Git Hosting Provider
 """"""""""""""""""""""""""""""""""""""""
 
 Another way to share packages is to install from source by downloading the package from a hosting provider. Python
-and R provide ways to do this via the pip or install.packages commands, as of the time of this writing. Instead of
+and R provide ways to do this via the pip or install.packages commands, respectively. Instead of
 downloading from PyPI or CRAN, one can point these commands to the git hosting provider, for example, an on-prem
 instance of GitHub Enterprise, instead. The installation command will then download the source code, build the package,
 and then install it on the user's machine.
