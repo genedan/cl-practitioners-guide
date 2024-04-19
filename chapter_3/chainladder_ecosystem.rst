@@ -9,7 +9,7 @@ along with new projects that have emerged since Chainladder's inception.
 Community Effort
 ----------------
 
-Over the course of 6 years, X (insert number here) users have opened and closed 224 issues pertaining to bugs, usage
+Over the course of 6 years, X (insert number here - delete if we can't find) users have opened and closed 224 issues pertaining to bugs, usage
 questions, and new features. Thanks to chainladder being hosted on an easily discoverable software development platform,GitHub, these efforts arose organically from actuarial practitioners with an interest in open source software.
 
 The transparency of the package, along with the social-media aspects of GitHub, facilitated discussions between
