@@ -82,15 +82,14 @@ The following methods for sharing code are not recommended but may have been use
 Email
 ^^^^^
 
+In the absence of a proper version control hosting provider to share code, one may wish to distribute code to teammates
+via company email.
+
 Why we shouldn't share code this way:
 
 * Companies may forbid attachments with certain code extensions (.py, .R).
 * If you shared your code and later make an update, you will need to send a new file. If your colleague also made their own update, they will need to manually inspect your new version and their version and hope that they didn't make any errors in doing so.
-* Emails are reactive, if you don't check your email, you might not know a new version is available. 
-
-Communicative barriers:
-
-If you bring these points up to upper management, you may receive the counterargument since there are often workarounds.
+* Emails are reactive, if you don't check your email, you might not know a new version is available.
 
 Shared Folders
 ^^^^^^^^^^^^^^
@@ -156,9 +155,9 @@ described as follows:
 
 * **Hosting Environment:** A server with an installation of a version control hosting provider (in this case, GitHub).
 * **Development Environment:** The collection of employees or team members and their machines who are responsible for contributing to the repository.
+
 * **Production Environment:** A server running the deployed application that users interact with.
-* **Testing Environment:** A server that aims to closely replicate the production environment, used to test the application
-before deployment.
+* **Testing Environment:** A server that aims to closely replicate the production environment, used to test the application before deployment.
 
 These environments each have their own copy (or copies) so that they can
 serve their purpose without interference from changes occurring in the other environments. For example, one would not
@@ -287,7 +286,7 @@ they do not want their private IP to be exposed, as the packages uploaded to the
 public repositories are oftentimes the initial location that practitioners gravitate towards when first learning to
 installing packages because many books and open-source documentations use commands that set PyPI or CRAN as the
 default location where packages are downloaded from prior to installation. Practitioners who are not familiar with
-any other way to download a package may be left wondering how a team member can use the *pip* or **install.packages**
+any other way to download a package may be left wondering how a team member can use the **pip** or **install.packages**
 command to install a package developed internally in the company.
 
 One such way is repository mirroring. The company creates a mirror of PyPI or CRAN and then the employees can upload
