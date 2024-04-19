@@ -20,7 +20,7 @@ Our belief is that these standards can improve the efficacy of a reserving funct
 Should Data and Business Logic be Separate?
 ===========================================
 
-The actuarial profession is used to working with spreadsheets. The CAS technology survey consistently shows Microsoft Excel as the dominant tool used in actuarial work. Indeed for a large swath of actuarial problems, spreadsheets are fantastic tool.  According to the ASTIN 2016 Non-Life Reserving Practices Survey, the plurality of practitioners worldwide use spreadsheet software for meeting reserving obligations.
+The actuarial profession is used to working with spreadsheets. The CAS technology survey consistently shows Microsoft Excel as the dominant tool used in actuarial work (Fannin 2022). Indeed for a large swath of actuarial problems, spreadsheets are fantastic tool.  According to the ASTIN 2016 Non-Life Reserving Practices Survey, the plurality of practitioners worldwide use spreadsheet software for meeting reserving obligations.
 
 Spreadsheets differ from traditional software applications in that they generally promote interdependence between the data and business logic. Because of this, there is no difference between cells with raw data and cells with formulae.  At a small enough scale, this is easy to reason about making spreadsheets great for simple models, prototypes, when working with small data sets.
 
@@ -32,7 +32,7 @@ Visual Basic for Applications (VBA) and PowerPivot backend are excellent extensi
 
 Shareability is another key requirements to a software-oriented approach to actuarial work. Every company has their own implementation of spreadsheets with much of the same basic functionality, albeit with lots of variation. As a profession that adheres to standards of practice, its natural for commonalities in approaches to be used throughout industry. Yet spreadsheets are not shared in the public domain with as much frequency as software packages.  This is because of the co-mingled nature of data and logic as well as the approach to designing spreadsheets which is often emphasizes practical and actuarial aspects rather than emphasizing quality and reusability of work product.
 
-In the context of open-source software, reserving capabilities can be developed with much more rigor than any one company’s spreadsheet implementation. Widely used open-source software logic is tested in the public domain. Usage of software by multiple people in multiple companies substantially feeds back into the quality of the work product. A 2009 meta-analysis found that over 90 percent of reviewed spreadsheets contain errors.  While software is not immune to errors, the expected volume of errors within a piece of software reduces as the user base of that software increases. This is particularly beneficial for actuarial teams in smaller firms without the resources to test and maintain bespoke spreadsheet applications.
+In the context of open-source software, reserving capabilities can be developed with much more rigor than any one company’s spreadsheet implementation. Widely used open-source software logic is tested in the public domain. Usage of software by multiple people in multiple companies substantially feeds back into the quality of the work product. A 2009 meta-analysis found that over 90 percent of reviewed spreadsheets contain errors (Powell 2009).  While software is not immune to errors, the expected volume of errors within a piece of software reduces as the user base of that software increases. This is particularly beneficial for actuarial teams in smaller firms without the resources to test and maintain bespoke spreadsheet applications.
 
 Another benefit to a software-oriented approach to reserving is reusability. By design, the business logic is intended to support a variety of different use cases whether that be for start-up companies with limited history, long-tenured companies with decades of data.
 
@@ -60,16 +60,14 @@ In tidy data:
 #.	Each observation is a row; each row is an observation.
 #.	Each value is a cell; each cell is a single value.
 
-Tidy data makes it easy for an analyst or a computer to extract needed variables because it provides a standard way of structuring a dataset.  The basic triangle is not considered tidy data. A single variable, say losses paid, spans multiple rows. A single observation, say accident year, spans multiple columns. Data shaped as a basic triangle contains rows representing a time-dependent cohort of loss data. This is commonly the accident period, but could be report period as well as policy period. Cohorts are reviewed at regular intervals to elucidate the loss development process. In its simplest form, a triangle may look like the following:
+Tidy data makes it easy for an analyst or a computer to extract needed variables because it provides a standard way of structuring a dataset (Wickham 2014).  The basic triangle is not considered tidy data. A single variable, say losses paid, spans multiple rows. A single observation, say accident year, spans multiple columns. Data shaped as a basic triangle contains rows representing a time-dependent cohort of loss data. This is commonly the accident period, but could be report period as well as policy period. Cohorts are reviewed at regular intervals to elucidate the loss development process. In its simplest form, a triangle may look like the following:
 
 .. ipython:: python
 
    import chainladder as cl
    cl.load_sample('raa')
 
-This standard view of a loss triangle is an important structure for actuarial work. (Possibly make some references to the notation used in Monograph 4 which has a formal notation for describing a loss triangle.
-
-On its own, it is a useful structure for performing analysis, but the lack of tidy structure makes it more challenging to derive more complex insights.  For example, actuaries seldom look at a single triangle to formulate an opinion on unreported claims. Actuaries will often have a suite of triangles, many of which are arithmetic combinations of other triangles to inform their analysis.  Such triangles include:
+This standard view of a loss triangle is an important structure for actuarial work. On its own, it is a useful structure for performing analysis, but the lack of tidy structure makes it more challenging to derive more complex insights.  For example, actuaries seldom look at a single triangle to formulate an opinion on unreported claims. Actuaries will often have a suite of triangles, many of which are arithmetic combinations of other triangles to inform their analysis.  Such triangles include:
 
 *	Paid vs incurred loss data.
 *	Loss vs loss adjustment expense data.
@@ -83,7 +81,7 @@ The multidimensional triangle aims to blend the need for a suite of triangles an
 
 .. image:: https://chainladder-python.readthedocs.io/en/latest/_images/triangle_graphic.PNG
 
-Here, `index` includes the qualitative properties of the observation, and `column` contains the quantitative properties.
+Here, `index` is defined analogous to the pandas library (Mckinney 2011) and includes the qualitative properties of the observation, and `column` contains the quantitative properties.
 
 Though tidy data finds its roots in R, tidy concepts apply to all tables of data and can be queried by any dataframe library syntax. Because of the implementation of chainladder-python in the Python programming language, the syntax for working with a `Triangle` follows Python’s most widely used dataframe library, pandas. Treating a suite of triangles as a tidy dataframe substantially enhances the diagnostic capabilities of the practitioner as it allows for exposition of data manipulation used by pandas while preserving access to the untidy traditional loss triangle format.
 
@@ -107,7 +105,7 @@ Estimation of an unpaid claim analysis is informed by three sources:
 
 Models and assumptions are related, but are not the same thing. In the domain of machine learning, practitioners are equipped with a diverse array of algorithms or methods. However, each algorithm comes with its own set of assumptions and requires the tuning of specific hyperparameters to effectively guide the model's convergence toward a solution. In short, assumptions are model dependent.
 
-Taking inspiration from scikit-learn, the most popular machine learning library in Python, we can explore how general purpose modeling standards can be applied to reserving. scikit-learn includes a suite of Machine Learning estimators that range anywhere from data prep (e.g. PCA, OneHotEncoding) to classification (e.g. RandomForestClassifier, K-neighbors), to regression (e.g. LinearRegression, ElasticNet), to clustering (e.g. K-means).
+Taking inspiration from scikit-learn, the most popular machine learning library in Python, we can explore how general purpose modeling standards can be applied to reserving. scikit-learn includes a suite of Machine Learning estimators that range anywhere from data prep (e.g. PCA, OneHotEncoding) to classification (e.g. RandomForestClassifier, K-neighbors), to regression (e.g. LinearRegression, ElasticNet), to clustering (e.g. K-means). A consistent API across the package makes scikit-learn very usable in practice. Experimenting with different learning algorithm is as simple as substituting differnet estimators (Buitinck 2013)
 
 The chainladder-python package uses the scikit-learn estimator as the foundation to model construction. Similar to scikit-learn, actuaries use a variety of techniques and algorithms to model unpaid claim estimates. These can span a variety of use cases including:
 
@@ -118,7 +116,7 @@ The chainladder-python package uses the scikit-learn estimator as the foundation
 
 Model selection is a starting point for an analysis, how the model behaves can be altered through the usage of hyperparameters. For example, scikit-learn’s ElasticNet estimator includes the following hyperparamters to influence how the model behaves (alpha, l1_ratio, fit_intercept, precompute, max_iter, copy_X, tol, warm_start, positive, random_state, selections).  A key property of these hyperparameters is that they can be set prior to the fitting of the estimator to any data.  This is similar to assumption setting where an actuary may want to influence how development factors are calculated. The Development estimator has the following hyperparameters to aid in assumption setting (n_periods, average, sigma_interpolation, drop, drop_high, drop_low, preserve, drop_valuation, drop_above, drop_below, fillna, groupby). `n_periods` would indicate the number of diagonals from a triangle to be used in selecting loss development. `average` allows for selection between ‘simple’, volume’ and ‘regression’. Each of these can be varied for each development lag and are specified before fitting the estimator to a Triangle.
 
-Analytical workflows are more complex than just fitting single estimators. Scikit-learn accommodates chaining separate algorithms together to support more complex workflows. It’s entirely reasonable to perform PCA on data before pushing it into a KNeighbors classifier. Chaining algorithms together is possible in chainladder and is facilitated through the use of composite estimators called `Pipeline`s.
+Analytical workflows are more complex than just fitting single estimators. Scikit-learn accommodates chaining separate algorithms together to support more complex workflows (Buitinck 2013). It’s entirely reasonable to perform PCA on data before pushing it into a KNeighbors classifier. Chaining algorithms together is possible in chainladder and is facilitated through the use of composite estimators called `Pipeline`s.
 
 As is the case with the suite of machine learning estimators, not all of use-cases are intended to develop unpaid claims estimates in isolation. An actuary may want to perform a basic chainladder projection on a Berquist-Sherman adjusted set of triangles.  It is also common to see a single set of development factors being used across both a multiplicative Chainladder and a Bornhuetter-Ferguson approach.  Separating techniques into composable estimators allows for reuse. As a practitioner, one can declare individual estimators and use those to create a `Pipeline` that describe a reserving process.
 
