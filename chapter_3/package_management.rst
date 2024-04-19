@@ -130,8 +130,12 @@ While such practices are well-intentioned, and indeed solve many problems that a
 shortcomings and lack features that version control systems used in software have already solved and implemented.
 
 One such shortcoming arises when the progression of complex actuarial projects is not monolithically linear. Imagine
-a large model embedded in a spreadsheet. The actuary decides to call this first version "v1." Later on,
-
+a large model embedded in a spreadsheet. The actuary decides to call this first version "v1." Later on, the actuary overwrites
+large portions of v1 and calls the new spreadsheet v2. At some future point the actuary may find out that they cannot
+make v3 without revisiting v1 while at the same time using the newer features found in v2. This creates and awkward
+situation where project history is no unclear without awkward workarounds. On the other hand, designing a modular
+package with a language like R or Python, along with using the conflict resolution and checkout features of Git, avoids
+these issues.
 
 Hosting
 -------
