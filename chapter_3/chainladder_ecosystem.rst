@@ -9,12 +9,13 @@ along with new projects that have emerged since Chainladder's inception.
 Community Effort
 ----------------
 
-Over the course of 6 years, X (insert number here - delete if we can't find) users have opened and closed 224 issues pertaining to bugs, usage
-questions, and new features. Thanks to chainladder being hosted on an easily discoverable software development platform,GitHub, these efforts arose organically from actuarial practitioners with an interest in open source software.
+Since @jbogaardt's initial commit on June 14, 2017, the Chainladder repository has undergone significant development, amassing over 1,400 commits contributed by 19 distinct individuals. This collaborative effort has resulted in a dynamic project, with new versions released every 3 to 6 months on average. Currently, the project boasts 75 released versions, with the latest iteration, v0.8.20, launched on April 10, 2024.
 
-The transparency of the package, along with the social-media aspects of GitHub, facilitated discussions between
-developers from all over the world to improve the quality of the package. By being embedded in the broader open-source community, chainladder
-continues to evolve to meet the ever-changing demands of business and technology.
+The project's vitality is further evidenced by the acceptance and merging of 158 pull requests and the active engagement of the community in issue reporting. Over 250 issues have been raised collectively, with more than 230 of them successfully addressed and resolved. This responsiveness to community feedback has fostered a positive reception, as demonstrated by the 173 stars received on the @casact GitHub community, positioning Chainladder as one of the most acclaimed packages in the whole actuarial community, including non-Property and Casualty practices.
+
+The success of Chainladder can be attributed in part to its presence on GitHub, a widely accessible software development platform. Leveraging the platform's visibility, actuarial practitioners and other stakeholders with an interest in open-source software have organically contributed to its growth and refinement.
+
+The transparency afforded by GitHub, coupled with its social-media functionalities, has facilitated global discussions among developers, enabling them to collaboratively enhance the package's quality. By embedding itself within the broader open-source ecosystem, Chainladder remains adaptable, continuously evolving to address the evolving needs of both business and technology.
 
 Downstream Projects
 -------------------

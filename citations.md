@@ -8,3 +8,4 @@
 7. Astin Working Party 2016, "Non Life Reserving Practices"
 8. Buitinck et al., 2013. "API design for machine learning software: experiences from the scikit-learn project"
 9. Mckinney, Wes 2011. "pandas: a Foundational Python Library for Data Analysis and Statistics"
+10. Caseres, Matthew. https://www.actuarialopensource.org/
