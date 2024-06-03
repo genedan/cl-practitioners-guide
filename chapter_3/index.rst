@@ -1,8 +1,8 @@
-Chapter 3
+Chapter 2
 =========
 
 .. toctree::
 
-   package_management.rst
-   git.rst
-   chainladder_ecosystem.rst
+   chainladder-python tutorials.ipynb
+..
+   chainladder-python_tutorials
