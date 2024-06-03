@@ -1,5 +1,5 @@
-Chapter 2
-=========
+Practitioners' Guide of Chainladder (Python Package)
+====================================================
 
 .. toctree::
 

@@ -1,5 +1,5 @@
-Chapter 1
-=========
+Data Management Principles and Implementation Philosophy
+========================================================
 
 .. toctree::
 

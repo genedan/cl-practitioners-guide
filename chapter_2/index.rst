@@ -1,5 +1,5 @@
-Chapter 2
-=========
+Package Management and the Chainladder Ecosystem
+================================================
 
 .. toctree::
 
