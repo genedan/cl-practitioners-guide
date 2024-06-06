@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Practitioner's Guide to Reserving Using Open-Source Tools"
+project = "Practitioners Guide to Building Actuarial Reserving Workflows Using chainladder-python"
 copyright = "2024, John Bogaardt, Gene Dan, Kenneth Hsu"
 author = "John Bogaardt, Gene Dan, Kenneth Hsu"
 
