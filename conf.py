@@ -20,9 +20,9 @@ extensions = ["IPython.sphinxext.ipython_directive", "nbsphinx"]
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "venv", "tmp"]
 # latex_additional_files = ['preamble.sty']
-# latex_elements = {
-#     'preamble': r'''\usepackage{preamble}'''
-# }
+latex_elements = {
+    'extraclassoptions': 'openany,oneside'
+}
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
