@@ -91,7 +91,7 @@ Estimation of an unpaid claim analysis is informed by three sources:
 
 Models and assumptions are related, but are not the same thing. In the domain of machine learning, practitioners are equipped with a diverse array of algorithms or methods. However, each algorithm comes with its own set of assumptions and requires the tuning of specific hyperparameters to effectively guide the model's convergence toward a solution. In short, assumptions are model dependent.
 
-Taking inspiration from scikit-learn, the most popular machine learning library in Python, we can explore how general purpose modeling standards can be applied to reserving. scikit-learn includes a suite of Machine Learning estimators that range anywhere from data prep (e.g. PCA, OneHotEncoding) to classification (e.g. RandomForestClassifier, K-neighbors), to regression (e.g. LinearRegression, ElasticNet), to clustering (e.g. K-means). A consistent API across the package makes scikit-learn very usable in practice. Experimenting with different learning algorithm is as simple as substituting differnet estimators (Buitinck 2013)
+Taking inspiration from scikit-learn, the most popular machine learning library in Python, we can explore how general purpose modeling standards can be applied to reserving. scikit-learn includes a suite of Machine Learning estimators that range anywhere from data prep (e.g. PCA, OneHotEncoding) to classification (e.g. RandomForestClassifier, K-neighbors), to regression (e.g. LinearRegression, ElasticNet), to clustering (e.g. K-means). A consistent API across the package makes scikit-learn very usable in practice. Experimenting with different learning algorithm is as simple as substituting different estimators (Buitinck 2013)
 
 The chainladder-python package uses the scikit-learn estimator as the foundation to model construction. Similar to scikit-learn, actuaries use a variety of techniques and algorithms to model unpaid claim estimates. These can span a variety of use cases including:
 
@@ -104,7 +104,7 @@ Model selection is a starting point for an analysis, how the model behaves can b
 
 Analytical workflows are more complex than just fitting single estimators. Scikit-learn accommodates chaining separate algorithms together to support more complex workflows (Buitinck 2013). It’s entirely reasonable to perform PCA on data before pushing it into a KNeighbors classifier. Chaining algorithms together is possible in chainladder and is facilitated through the use of composite estimators called `Pipeline`s.
 
-As is the case with the suite of machine learning estimators, not all of use-cases are intended to develop unpaid claims estimates in isolation. An actuary may want to perform a basic chainladder projection on a Berquist-Sherman adjusted set of triangles.  It is also common to see a single set of development factors being used across both a multiplicative Chainladder and a Bornhuetter-Ferguson approach.  Separating techniques into composable estimators allows for reuse. As a practitioner, one can declare individual estimators and use those to create a `Pipeline` that describe a reserving process.
+As is the case with the suite of machine learning estimators, not all of use-cases are intended to develop unpaid claims estimates in isolation. An actuary may want to perform a basic chainladder projection on a Berquist-Sherman adjusted set of triangles.  It is also common to see a single set of development factors being used across both a multiplicative chainladder and a Bornhuetter-Ferguson approach.  Separating techniques into composable estimators allows for reuse. As a practitioner, one can declare individual estimators and use those to create a `Pipeline` that describe a reserving process.
 
 An example reserving `Pipeline` might be declared as follows:
 
@@ -121,7 +121,7 @@ An example reserving `Pipeline` might be declared as follows:
        ]
    )
 
-It’s clear to see that this is a volume-weighted chainladder model with a tail factor set using exponential curve fitting. Further, this model will resample the `Triangle` it receives using overdispersed poisson bootstrapping to provide a simulated set of reserve estimates.
+It’s clear to see that this is a volume-weighted chainladder model with a tail factor set using exponential curve fitting. Further, this model will resample the `Triangle` it receives using over-dispersed poisson bootstrapping to provide a simulated set of reserve estimates.
 
 Some advantages of this approach:
 

@@ -4,7 +4,7 @@ Package Management
 Reserve studies apply algorithms to manipulate data. These algorithms can be written as Excel formulas,
 as a sequence of statements in a script, a collection of functions and classes in a package, or in a variety
 of other ways. The aim of this section is to promote the organization of these algorithms into packages,
-of which both the R and Python versions of Chainladder are examples of. We will start by following what an actuary
+of which both the R and Python versions of chainladder are examples of. We will start by following what an actuary
 interested in applying programming on the job might do as they begin to learn their language of preference,
 by applying simple Python statements to an input triangle. We will then describe the problems the actuary may face
 when doing so and the motivations towards organizing their code into higher levels of abstraction - that is,
