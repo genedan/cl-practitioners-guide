@@ -15,7 +15,7 @@ author = "John Bogaardt, Gene Dan, Kenneth Hsu"
 
 import chainladder as cl
 
-extensions = ["IPython.sphinxext.ipython_directive", "nbsphinx"]
+extensions = ["IPython.sphinxext.ipython_directive", "nbsphinx", "sphinx.ext.autosectionlabel"]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "venv", "tmp"]

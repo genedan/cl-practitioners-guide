@@ -134,8 +134,12 @@ a large model embedded in a spreadsheet. The actuary decides to call this first 
 large portions of v1 and calls the new spreadsheet v2. At some future point the actuary may find out that they cannot
 make v3 without revisiting v1 while at the same time using the newer features found in v2. This creates and awkward
 situation where project history is no unclear without awkward workarounds. On the other hand, designing a modular
-package with a language like R or Python, along with using the conflict resolution and checkout features of Git, avoids
-these issues.
+package with a language like R or Python, along with using the conflict resolution and checkout features of a version
+control system, avoids these issues.
+
+Examples of popular version control systems are Git, Subversion, and Mercurial. Of these, we would recommend the use
+of Git due to the large social community that has evolved around it since its inception. For more information about
+Git, including some of its basic commands, please refer to the :ref:`section on Git <Git and Version Control Management>` later in this chapter.
 
 Hosting
 -------
