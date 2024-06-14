@@ -2,4 +2,5 @@ chainladder==0.8.23
 jupyter==1.0.0
 jupyter_black==0.3.4
 nbsphinx==0.9.3
+pickleshare==0.7.5
 Sphinx==7.2.6
