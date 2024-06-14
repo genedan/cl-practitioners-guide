@@ -6,8 +6,6 @@ The CAS conducts an annual technology survey, and the responses to the question 
 
 While we recognize the attractiveness of continuing to use spreadsheet as the primary actuarial tool, there are many benefits to open-source tools.
 
--  Advantages:
-
    -  **Cost**: Open-source tools are cost-effective because they are
       typically free to use, making them accessible to individuals and
       organizations with limited financial budgets.
