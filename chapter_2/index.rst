@@ -1,9 +1,7 @@
-Package Management and the Chainladder Ecosystem
-================================================
+Data Management Principles and Implementation Philosophy
+========================================================
 
 .. toctree::
 
-   package_management.rst
-   proprietary software vs open-source packages.rst
-   git.rst
-   chainladder_ecosystem.rst
+   data_and_logic
+

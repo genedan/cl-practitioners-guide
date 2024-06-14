@@ -1,8 +1,9 @@
-Practitioners' Guide of Chainladder (Python Package)
-====================================================
+Package Management and the Chainladder Ecosystem
+================================================
 
 .. toctree::
 
-   chainladder-python tutorials.ipynb
-..
-   chainladder-python_tutorials
+   package_management.rst
+   proprietary software vs open-source packages.rst
+   git.rst
+   chainladder_ecosystem.rst

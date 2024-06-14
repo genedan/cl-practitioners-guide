@@ -1,7 +1,6 @@
-Data Management Principles and Implementation Philosophy
-========================================================
+Introduction
+============
 
 .. toctree::
 
-   data_and_logic.rst
-
+   intro.rst
