@@ -1,5 +1,5 @@
-Practitioners Guide to Building Actuarial Reserving Workflows Using chainladder-python
-======================================================================================
+Practitioner's Guide to Building Actuarial Reserving Workflows Using chainladder-python
+=======================================================================================
 
 .. toctree::
 

@@ -1,4 +1,4 @@
-Practitioners' Guide of Chainladder (Python Package)
+Practitioner's Guide of Chainladder (Python Package)
 ====================================================
 
 .. toctree::
