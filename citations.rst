@@ -11,3 +11,5 @@ References
 8. Buitinck et al., 2013. "API design for machine learning software: experiences from the scikit-learn project"
 9. Mckinney, Wes 2011. "pandas: a Foundational Python Library for Data Analysis and Statistics"
 10. Caseres, Matthew. https://www.actuarialopensource.org/
+11. Mack, Thomas 1994. "Which Stochastic Model is Underlying the Chain Ladder Method?" RAA triangle
+12. Meyers, Glenn and Shi, Peng. 2011 "Loss Reserving Data Pulled from NAIC Schedule P" CLRD triangle
